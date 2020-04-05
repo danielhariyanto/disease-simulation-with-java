@@ -1,5 +1,4 @@
 
-
 public class MixedPopulation extends Population{
   int numShelterInPlace;
   int numEssential;
