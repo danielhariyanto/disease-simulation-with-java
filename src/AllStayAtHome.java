@@ -1,4 +1,4 @@
-package lesson19;
+
 
 public class AllStayAtHome extends Population{
 

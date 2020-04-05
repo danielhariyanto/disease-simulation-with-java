@@ -1,4 +1,3 @@
-package lesson19;
 
 public class StayAtHome extends Person{
 

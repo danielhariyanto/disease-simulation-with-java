@@ -1,4 +1,4 @@
-package lesson19;
+
 import java.util.Random;
 /**
  The Person class models infected people in a 2d grid

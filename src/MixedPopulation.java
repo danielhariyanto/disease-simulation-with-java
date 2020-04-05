@@ -1,4 +1,4 @@
-package lesson19;
+
 
 public class MixedPopulation extends Population{
   int numShelterInPlace;
