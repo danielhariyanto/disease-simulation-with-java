@@ -22,7 +22,7 @@ public class Population{
 
   public void createPeople(){
     for(int i=0; i<this.people.length; i++){
-      this.addPerson(new Person());
+      //this.addPerson(new Person());
     }
   }
 

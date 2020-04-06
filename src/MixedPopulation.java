@@ -20,7 +20,7 @@ public class MixedPopulation extends Population{
       this.addPerson(new StayAtHomeIfSick());
     }
     for(int i=0; i<this.numOthers; i++){
-      this.addPerson(new Person());
+      this.addPerson(new Skeptic());
     }
   }
 }
