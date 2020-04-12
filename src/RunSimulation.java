@@ -1,11 +1,8 @@
 
-import java.util.Random;
-
 public class RunSimulation {
 	// the maximum number of days the simulation will run
 	private static int MAX_TICKS=1000;
-
-	private Random random = new Random();
+	public static int tick;
 
 	public static void main(String[] args) {
 		// first we get the simulation parameters
@@ -17,6 +14,7 @@ public class RunSimulation {
 		int numEssential = Integer.parseInt(args[3]);
 		int numSkeptic = Integer.parseInt(args[4]);
 		int numFlier = Integer.parseInt(args[5]);
+		int numSheltered = Integer.parseInt(args[6]);
 
 		// next we create the population and the country
 		Population population;
@@ -26,7 +24,7 @@ public class RunSimulation {
 		//int numEssential = numPeople/10;
 		//int numOther = numPeople/20;
 		//int numStayHome = numPeople - numEssential - numOther;
-		population = new MixedPopulation(numStayHome, numEssential, numSkeptic, numFlier);
+		population = new MixedPopulation(numStayHome, numEssential, numSkeptic, numFlier, numSheltered);
 		population.createPeople();
 
 		Country country = new Country(width,height);
@@ -39,21 +37,16 @@ public class RunSimulation {
 		country.printCountry();
 
 		System.out.println("\nTracking the Infection");
-		for(int k=0;k<MAX_TICKS; k++) {
+		for(tick = 0; tick <MAX_TICKS; tick++) {
 			country.simulateOneStep();
-			country.printState(k);
+			country.printState(tick);
 
 			if (country.numInfected==0) {
 				break;
-
 			}
 		}
 		System.out.println("\nFinal State of the Country");
 		country.printCountry();
 
 	}
-
-
-
-
 }
