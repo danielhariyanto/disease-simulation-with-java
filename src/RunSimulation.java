@@ -16,6 +16,7 @@ public class RunSimulation {
 		int numStayHome = Integer.parseInt(args[2]);
 		int numEssential = Integer.parseInt(args[3]);
 		int numSkeptic = Integer.parseInt(args[4]);
+		int numFlier = Integer.parseInt(args[5]);
 
 		// next we create the population and the country
 		Population population;
@@ -25,7 +26,7 @@ public class RunSimulation {
 		//int numEssential = numPeople/10;
 		//int numOther = numPeople/20;
 		//int numStayHome = numPeople - numEssential - numOther;
-		population = new MixedPopulation(numStayHome, numEssential, numSkeptic);
+		population = new MixedPopulation(numStayHome, numEssential, numSkeptic, numFlier);
 		population.createPeople();
 
 		Country country = new Country(width,height);
