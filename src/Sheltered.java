@@ -1,4 +1,3 @@
-
 public class Sheltered extends Person {
 	private int tick = 0;
 	

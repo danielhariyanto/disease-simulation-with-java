@@ -1,5 +1,5 @@
-
 import java.util.Random;
+
 /**
  The Person class models infected people in a 2d grid
  a person has a unique id, an (x,y) location in a country,
@@ -16,21 +16,20 @@ import java.util.Random;
 */
 
 public abstract class Person {
-  // the persons fate depends on some random variables...
-  private Random random = new Random();
+	// the persons fate depends on some random variables...
+	private Random random = new Random();
 
-  // we use the counter to give each Person a unique id
+	// we use the counter to give each Person a unique id
 	private static int counter=1;
-  int id = 0;
+	int id = 0;
 
-  // Next we need the location of the Person
-  // the Country variable allows the user to "look around"
+	// Next we need the location of the Person
+	// the Country variable allows the user to "look around"
 	int x;
 	int y;
 	Country country;
 
-
-  // next we record their infection status
+	// next we record their infection status
 	boolean infected = false;
 	boolean exposed = false; // after being exposed, one gets infect in next tick
 	boolean recovered = false;
@@ -39,10 +38,7 @@ public abstract class Person {
 	int infectionTime = -1;  // -1 means they haven't yet been infected
 	int recoveryTime = 5; // they are not infectious after recovery
 
-
-
-	/**
-	*/
+	
 	public Person(int x,int y,Country country) {
 		this.x=x;
 		this.y=y;
@@ -91,27 +87,27 @@ public abstract class Person {
 
 	}
 
-  abstract void tryToMove();
+	abstract void tryToMove();
 
-  /**
+	/**
 	   try to move one step in a random direction.
 		 if they way is blocked then don't move.
 	*/
-  void tryToMoveRandomly(){
-    int dx = random.nextInt(3)-1; // -1,0,1
-    int dy = random.nextInt(3)-1; // -1,0,1
-    if (isOK(this.x+dx, this.y+dy,this.country)) {
-      this.moveTo(this.x+dx, this.y+dy);
-    }
-  }
+	void tryToMoveRandomly(){
+		int dx = random.nextInt(3)-1; // -1,0,1
+		int dy = random.nextInt(3)-1; // -1,0,1
+		if (isOK(this.x+dx, this.y+dy,this.country)) {
+			this.moveTo(this.x+dx, this.y+dy);
+		}
+	}
 
 	/**
 	  update their infection status.
 		They move from normal to infected
 		or from infected to recovered.
 	*/
-  void checkForInfection(){
-    if (this.exposed && ! this.infected) {
+	void checkForInfection(){
+		if (this.exposed && ! this.infected) {
 			this.infected = true;
 			this.infectionTime = this.age;
 		}
@@ -119,10 +115,10 @@ public abstract class Person {
 		if (infected && !this.recovered && (this.age - this.infectionTime > this.recoveryTime)) {
 			this.recovered = true;
 		}
-  }
+	}
 
 
-  /**
+	/**
 	  this is called if someone is near an infected person
 		a random number is generated to see if they have become
 		exposed to the virus. In the next step they will become
@@ -144,7 +140,6 @@ public abstract class Person {
 	visits all neighbors and infects them
 	*/
 	void infectNeighbors() {
-
 		if (this.infected && (this.age -this.infectionTime < this.recoveryTime)) {
 			for(int i=this.x-1; i<=this.x+1; i++) {
 				for(int j=this.y-1; j<=this.y+1; j++) {

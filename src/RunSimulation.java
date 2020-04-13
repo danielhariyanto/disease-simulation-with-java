@@ -1,4 +1,3 @@
-
 public class RunSimulation {
 	// the maximum number of days the simulation will run
 	private static int MAX_TICKS=1000;
@@ -47,6 +46,5 @@ public class RunSimulation {
 		}
 		System.out.println("\nFinal State of the Country");
 		country.printCountry();
-
 	}
 }

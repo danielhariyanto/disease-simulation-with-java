@@ -1,4 +1,3 @@
-
 public class Skeptic extends Person {
 
 	public Skeptic(){

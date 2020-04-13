@@ -1,5 +1,3 @@
-
-
 public class Country {
 
 	/** these are summary statistics about the epidemic
@@ -101,5 +99,4 @@ public class Country {
 			System.out.println();
 		}
 	}
-
 }
