@@ -6,7 +6,7 @@ import java.util.Random;
  and an infection status.
  The could be normal, infected, exposed, or recovered.
 
- Each person has an individual probablity of being infected when coming in contact with an infected person
+ Each person has an individual probability of being infected when coming in contact with an infected person
  and they have an individual recovery time after they are infected, at which point they are no longer infectious.
  They can move one unit horizontally, vertically, or diagonally in the grid.
 
