@@ -9,10 +9,10 @@ Person -- a model of a person in an epidemic. They have a position and an infect
 RunSimulation -- this is a class which gets some data from he command line and uses it to create a Country and a Population. Then it runs a simulation until there are no more infected people. At each step it calls the tick method on all people to model movement in the country, and then calls the infectNeighbors method on infected people to see who they infect.
 
 This program also contains three subclasses of Person:
-StayAtHome -- this kind of person never moves
-StayAtHomeIfSick -- this models an essential person. They move as regular unless they get sick.
+ - StayAtHome -- this kind of person never moves
+ - StayAtHomeIfSick -- this models an essential person. They move as regular unless they get sick.
 Note that the default person is a skeptic and always tries to move to a random neighboring position and so can spread the virus.
 
 The program also contains a few subclasses of Population
-- AllStayAtHome is a population where everyone stays at home all the time, even essential personnel.
-- MixedPopulation models a population with a specified number of StayAtHome, StatHomeIfSick, and regular Persons.
+ - AllStayAtHome is a population where everyone stays at home all the time, even essential personnel.
+ - MixedPopulation models a population with a specified number of StayAtHome, StatHomeIfSick, and regular Persons.
